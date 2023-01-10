@@ -48,6 +48,8 @@ class SonarScanner implements Serializable {
             } else {
                 sonarCommand += " -Dsonar.branch.name=$env.BRANCH_NAME"
             }
+        } else {
+            sonarCommand += " -Dsonar.branch.name=$env.BRANCH_NAME"
         }
 
         String projectVersion = computeProjectVersion()
