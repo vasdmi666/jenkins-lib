@@ -38,11 +38,10 @@ class EdtValidate implements Serializable {
 
             steps.unstash(DesignerToEdtFormatTransformation.WORKSPACE_ZIP_STASH)
 
-            steps.deleteDir(workspaceLocation);
             steps.unzip(workspaceLocation, DesignerToEdtFormatTransformation.WORKSPACE_ZIP)
 
             projectList = "--project-name-list $DesignerToEdtFormatTransformation.PROJECT_NAME"
-            
+
         } else {
             String projectDir = new File("$env.WORKSPACE/$config.srcDir").getCanonicalPath()
             projectList = "--project-list \"$projectDir\""
