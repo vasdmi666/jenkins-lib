@@ -148,7 +148,7 @@ class StepExecutor implements IStepExecutor {
 
     @Override
     def unzip(String dir, String zipFile, quiet = true) {
-        steps.unzip dir: dir, zipFile: zipFile, quiet: quiet
+        steps.unzip dir: dir, zipFile: zipFile, quiet: quiet, charset: 'CP1251'
     }
 
     @Override
