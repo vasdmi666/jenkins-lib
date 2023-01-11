@@ -36,7 +36,7 @@ class EdtValidate implements Serializable {
 
         if (config.sourceFormat == SourceFormat.DESIGNER) {
             steps.unstash(DesignerToEdtFormatTransformation.WORKSPACE_ZIP_STASH)
-            steps.unzip(DesignerToEdtFormatTransformation.WORKSPACE, DesignerToEdtFormatTransformation.WORKSPACE_ZIP)
+            steps.unzip(workspaceLocation, DesignerToEdtFormatTransformation.WORKSPACE_ZIP)
 
             projectList = "--project-name-list $DesignerToEdtFormatTransformation.PROJECT_NAME"
         } else {
