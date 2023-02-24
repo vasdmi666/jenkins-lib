@@ -50,6 +50,8 @@ class EdtValidate implements Serializable {
         def resultFile = "$env.WORKSPACE/$RESULT_FILE"
         def edtVersionForRing = EDT.ringModule(config)
 
+        steps.deleteDir(resultFile)
+
         Logger.println("Выполнение валидации EDT")
 
         def ringCommand = "ring $edtVersionForRing workspace validate --workspace-location \"$workspaceLocation\" --file \"$resultFile\" $projectList"
