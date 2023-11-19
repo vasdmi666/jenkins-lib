@@ -54,7 +54,7 @@ class EdtValidate implements Serializable {
 
         Logger.println("Выполнение валидации EDT")
 
-        def ringCommand = "set JAVA_HOME=C:\\Program Files\\BellSoft\\LibericaJDK-11 \n ring $edtVersionForRing workspace validate --workspace-location \"$workspaceLocation\" --file \"$resultFile\" $projectList"
+        def ringCommand = "set JAVA_HOME=C:\\Program Files\\BellSoft\\LibericaJDK-11\n ring $edtVersionForRing workspace validate --workspace-location \"$workspaceLocation\" --file \"$resultFile\" $projectList"
         def ringOpts = [Constants.DEFAULT_RING_OPTS]
         steps.withEnv(ringOpts) {
             steps.catchError {
